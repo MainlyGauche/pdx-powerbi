@@ -37,12 +37,11 @@ TEMP_RAW=$(mktemp)
 TEMP_MUNGED=$(mktemp)
 trap 'rm -f "$TEMP_RAW" "$TEMP_MUNGED"' EXIT
 
+# Parse the save file into JSON
 echo "Parsing..."
+rakaly json --duplicate-keys group "$INPUT_SAVE" > "$TEMP_RAW"
 
-cat "$INPUT_SAVE" | \
-	tail -n +2 | \
-	json -g > "$TEMP_RAW"
-
+# Munge into flat tables
 echo "Munging..."
 
 jq -f "$(dirname "$0")/munge.jq" "$TEMP_RAW" > "$TEMP_MUNGED"

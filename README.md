@@ -21,11 +21,11 @@ sqlite3 world.sqlite
 
 ## Dependencies
 
-On Windows,
+Install the [latest Rakaly](https://github.com/rakaly/cli/releases/latest) and add it to your `PATH`.
+
+On Windows, get the other dependencies with 
 
 ```bash
-winget install rustup
-cargo install jomini --features json
 winget install jq
 winget install miller.miller
 winget install sqlite.sqlite
@@ -34,7 +34,7 @@ winget install sqlite.sqlite
 ## Pipeline
 
 1. **save.v3**: PDX textformat
-2. **Jomini**: PDX → JSON
+2. **Rakaly**: PDX → JSON
 3. **jq**: Flattens and filters game databases
 4. **Miller (mlr)**: JSON → CSV
 5. **SQLite**: CSV → sqlite
