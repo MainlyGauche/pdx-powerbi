@@ -49,6 +49,7 @@ def to_rows: to_entries | .[] | squish;
 			id,
 			building,
 			state,
+			levels,
 			staffing,
 			dividends,
 			gross: (.goods_sales // 0)  - (.goods_cost // 0),

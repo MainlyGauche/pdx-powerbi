@@ -17,11 +17,8 @@ market_population as (
         join countries c on s.country = c.id
     group by 1
 )
-select round(coalesce(mi.investment, 0) / mp.workforce, 4) as investment_per_worker,
-    sum(investment) as investment,
-    sum(workforce) as workforce
-from market_population mp
-        left join market_investment mi on mp.market = mi.market
-    where mp.workforce > 0
-group by 1
-order by 1
+select mp.market,
+    round(coalesce(mi.investment, 0) / mp.workforce, 4) as investment_per_worker
+    from market_population mp
+    left join market_investment mi on mp.market = mi.market
+where mp.workforce > 0
