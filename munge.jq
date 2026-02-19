@@ -25,6 +25,13 @@ def to_rows: to_entries | .[] | squish;
 		definition,
 		capital,
 	}],
+	country_rankings : [.country_rankings.country_rankings[] | {
+		country,
+		rank,
+		target,
+		score,
+		prestige,
+	}],
 	states : [.states.database | to_rows | {
 		id,
 		country,
