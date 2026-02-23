@@ -1,6 +1,8 @@
 # pdx-powerbi
 
-Slurp PDX -- currently just v3 -- saves into friendly CSVs and analyze them with PowerBI.
+Slurp PDX saves into friendly CSVs and analyze them with PowerBI.
+
+Currently just Vic3 is supported: what "friendly" means is a matter of taste and varies per-game.
 
 ## Usage
 
