@@ -1,19 +1,38 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "b390093faf17e54eab78",
+  "name": "0f39a066c20318a6aeb6",
   "position": {
     "x": 0,
     "y": 0,
-    "z": 2000,
-    "height": 321.94528875379939,
-    "width": 320,
-    "tabOrder": 2000
+    "z": 0,
+    "height": 563.55971896955509,
+    "width": 721.43637782982046,
+    "tabOrder": 0
   },
   "visual": {
-    "visualType": "card",
+    "visualType": "donutChart",
     "query": {
       "queryState": {
-        "Values": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "buildings"
+                    }
+                  },
+                  "Property": "building_simplified"
+                }
+              },
+              "queryRef": "buildings.building_simplified",
+              "nativeQueryRef": "building_simplified",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
           "projections": [
             {
               "field": {
@@ -25,14 +44,14 @@
                           "Entity": "buildings"
                         }
                       },
-                      "Property": "investment"
+                      "Property": "gross"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "Sum(buildings.investment)",
-              "nativeQueryRef": "Sum of investment"
+              "queryRef": "Sum(buildings.gross)",
+              "nativeQueryRef": "Sum of gross"
             }
           ]
         }
@@ -49,7 +68,7 @@
                         "Entity": "buildings"
                       }
                     },
-                    "Property": "investment"
+                    "Property": "gross"
                   }
                 },
                 "Function": 0
@@ -66,7 +85,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "7f294b415f9b5a2510f9",
+        "name": "05f291894b68ac4c2341",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -76,13 +95,27 @@
                     "Entity": "buildings"
                   }
                 },
-                "Property": "investment"
+                "Property": "gross"
               }
             },
             "Function": 0
           }
         },
         "type": "Advanced"
+      },
+      {
+        "name": "500028b98b4e640b0965",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "buildings"
+              }
+            },
+            "Property": "building_simplified"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

@@ -1,38 +1,19 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "be20466b9ecacc1d29dc",
+  "name": "9cea0b5d1ab0a8bd4aa6",
   "position": {
-    "x": 0,
+    "x": 721.43637782982046,
     "y": 0,
-    "z": 0,
-    "height": 284.01215805471128,
-    "width": 1280,
-    "tabOrder": 0
+    "z": 1,
+    "height": 720.43715846994542,
+    "width": 558.56362217017954,
+    "tabOrder": 1
   },
   "visual": {
-    "visualType": "columnChart",
+    "visualType": "barChart",
     "query": {
       "queryState": {
         "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "pops"
-                    }
-                  },
-                  "Property": "literacy"
-                }
-              },
-              "queryRef": "pops.literacy",
-              "nativeQueryRef": "literacy",
-              "active": true
-            }
-          ]
-        },
-        "Series": {
           "projections": [
             {
               "field": {
@@ -46,7 +27,8 @@
                 }
               },
               "queryRef": "country_rankings.rank",
-              "nativeQueryRef": "rank"
+              "nativeQueryRef": "rank",
+              "active": true
             }
           ]
         },
@@ -59,17 +41,17 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "pops"
+                          "Entity": "buildings"
                         }
                       },
-                      "Property": "workforce"
+                      "Property": "gross"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "Sum(pops.workforce)",
-              "nativeQueryRef": "Sum of workforce"
+              "queryRef": "Sum(buildings.gross)",
+              "nativeQueryRef": "Sum of gross"
             }
           ]
         }
@@ -83,10 +65,10 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "pops"
+                        "Entity": "buildings"
                       }
                     },
-                    "Property": "workforce"
+                    "Property": "gross"
                   }
                 },
                 "Function": 0
@@ -98,72 +80,22 @@
         "isDefaultSort": true
       }
     },
-    "objects": {
-      "zoom": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "showOnValueAxis": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "categoryMax": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
-            "categorySize": {
-              "expr": {
-                "Literal": {
-                  "Value": "17.224718065957177D"
-                }
-              }
-            }
-          }
-        }
-      ]
-    },
     "drillFilterOtherVisuals": true
   },
   "filterConfig": {
     "filters": [
       {
-        "name": "1ec318d90a6bc0d47c09",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "pops"
-              }
-            },
-            "Property": "literacy"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "08671d4a7513f49ad8e1",
+        "name": "a0741e100c6008823995",
         "field": {
           "Aggregation": {
             "Expression": {
               "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "pops"
+                    "Entity": "buildings"
                   }
                 },
-                "Property": "workforce"
+                "Property": "gross"
               }
             },
             "Function": 0
@@ -172,7 +104,7 @@
         "type": "Advanced"
       },
       {
-        "name": "50733643be1a18fcecd4",
+        "name": "c8cb00c00aa12d9c18b6",
         "field": {
           "Column": {
             "Expression": {

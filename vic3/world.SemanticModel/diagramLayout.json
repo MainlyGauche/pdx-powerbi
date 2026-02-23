@@ -10,8 +10,8 @@
       "nodes": [
         {
           "location": {
-            "x": 486,
-            "y": 602.2314453125
+            "x": 612.95909505183181,
+            "y": 622.343777201899
           },
           "nodeIndex": "state_saturation",
           "nodeLineageTag": "4d3af6c3-63a6-4158-9d87-13061b3ccd70",
@@ -19,12 +19,12 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 5
+          "zIndex": 4
         },
         {
           "location": {
-            "x": 447,
-            "y": 311.2314453125
+            "x": 694.63308638822616,
+            "y": 303.68932085397535
           },
           "nodeIndex": "states",
           "nodeLineageTag": "3d68b751-2b6c-48d1-8eb1-104060697561",
@@ -32,7 +32,7 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 4
+          "zIndex": 3
         },
         {
           "location": {
@@ -45,12 +45,12 @@
             "height": 176,
             "width": 234
           },
-          "zIndex": 8
+          "zIndex": 5
         },
         {
           "location": {
-            "x": 128,
-            "y": 494.1064453125
+            "x": 320.32417369237874,
+            "y": 510.44771497263667
           },
           "nodeIndex": "country_rankings",
           "nodeLineageTag": "0a0fafc8-99c3-4cca-9ce2-22fc8c2ff884",
@@ -58,12 +58,12 @@
             "height": 200,
             "width": 234
           },
-          "zIndex": 3
+          "zIndex": 2
         },
         {
           "location": {
-            "x": 788,
-            "y": 348.0908203125
+            "x": 1058.2594597638001,
+            "y": 379.51633888968604
           },
           "nodeIndex": "pops",
           "nodeLineageTag": "e7c4c740-493b-4a70-bba3-dfe55737ace4",
@@ -71,12 +71,12 @@
             "height": 300,
             "width": 234
           },
-          "zIndex": 6
+          "zIndex": 10
         },
         {
           "location": {
             "x": 0,
-            "y": 39.7470703125
+            "y": 0
           },
           "nodeIndex": "markets",
           "nodeLineageTag": "08b2da15-2871-4895-a9e4-afd1340d61cb",
@@ -84,7 +84,7 @@
             "height": 145,
             "width": 156
           },
-          "zIndex": 2
+          "zIndex": 1
         },
         {
           "location": {
@@ -97,7 +97,7 @@
             "height": 128,
             "width": 234
           },
-          "zIndex": 7
+          "zIndex": 9
         },
         {
           "location": {
@@ -110,7 +110,7 @@
             "height": 272,
             "width": 234
           },
-          "zIndex": 9
+          "zIndex": 6
         },
         {
           "location": {
@@ -123,11 +123,11 @@
             "height": 176,
             "width": 234
           },
-          "zIndex": 1
+          "zIndex": 11
         },
         {
           "location": {
-            "x": 573.44505356565685,
+            "x": 601.09950991358062,
             "y": 0
           },
           "nodeIndex": "building_costs",
@@ -136,7 +136,7 @@
             "height": 171.39743560483632,
             "width": 234
           },
-          "zIndex": 10
+          "zIndex": 7
         },
         {
           "location": {
@@ -149,7 +149,20 @@
             "height": 145,
             "width": 621.16238887093232
           },
-          "zIndex": 11
+          "zIndex": 8
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 506.73001769329267
+          },
+          "nodeIndex": "interest_groups",
+          "nodeLineageTag": "892bdd1b-0710-43fd-b280-4a08aff16353",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 12
         }
       ],
       "name": "All tables",

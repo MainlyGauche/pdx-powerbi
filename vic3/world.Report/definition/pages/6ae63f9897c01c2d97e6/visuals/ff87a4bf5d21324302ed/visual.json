@@ -179,7 +179,7 @@
             "categorySize": {
               "expr": {
                 "Literal": {
-                  "Value": "0.007932463644498799D"
+                  "Value": "0.012982886100557844D"
                 }
               }
             },
@@ -241,6 +241,53 @@
             }
           ]
         }
+      },
+      {
+        "name": "88caee828d7e83e77db7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "market_investment_per_worker"
+              }
+            },
+            "Property": "investment_per_worker"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "7706e3c9c4263aa60e5e",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "pops"
+                  }
+                },
+                "Property": "workforce"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "cf5e7ca1f44d2910d071",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "country_rankings"
+              }
+            },
+            "Property": "rank"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

@@ -12,13 +12,12 @@ table market_investment_per_worker
 
 	column investment_per_worker
 		dataType: double
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
 		lineageTag: 5dcd9456-89a8-4d0e-b28f-157ac3727cf9
 		summarizeBy: sum
 		sourceColumn: investment_per_worker
 
 		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition market_investment_per_worker = m
 		mode: import
@@ -30,7 +29,7 @@ table market_investment_per_worker
 				in
 				    #"Changed Type"
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 
 	annotation PBI_NavigationStepName = Navigation
 

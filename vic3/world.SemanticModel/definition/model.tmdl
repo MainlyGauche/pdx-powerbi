@@ -3,13 +3,12 @@ model Model
 	defaultPowerBIDataSourceVersion: powerBI_V3
 	sourceQueryCulture: en-US
 	dataAccessOptions
-		fastCombine
 		legacyRedirects
 		returnErrorValuesAsNull
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_QueryOrder = ["Root","state_saturation","states","countries","country_rankings","pops","markets","market_investment_per_worker","buildings","building_ownership","building_costs","technologies"]
+annotation PBI_QueryOrder = ["Root","state_saturation","states","countries","country_rankings","pops","markets","market_investment_per_worker","buildings","building_ownership","building_costs","technologies","interest_groups"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
@@ -24,6 +23,7 @@ ref table buildings
 ref table building_ownership
 ref table building_costs
 ref table technologies
+ref table interest_groups
 
 ref cultureInfo en-US
 

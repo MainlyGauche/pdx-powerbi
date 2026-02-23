@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "fa9769b321f9b214c4ac",
+  "name": "53d8379ef36f17506f4b",
   "position": {
-    "x": 852.03647416413378,
+    "x": 957.082066869301,
     "y": 470.75987841945289,
     "z": 2000,
     "height": 248.99696048632219,
-    "width": 427.96352583586628,
+    "width": 322.91793313069911,
     "tabOrder": 2000
   },
   "visual": {
@@ -28,7 +28,7 @@
               },
               "queryRef": "building_ownership.cost",
               "nativeQueryRef": "cost",
-              "format": "0.00"
+              "format": "0.000"
             }
           ]
         }

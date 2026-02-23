@@ -103,7 +103,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "4cc6e1c01ab70ae221a3",
+        "name": "f315b342549083399dba",
         "field": {
           "Column": {
             "Expression": {
@@ -114,10 +114,47 @@
             "Property": "technology"
           }
         },
-        "type": "Categorical"
+        "type": "Advanced",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "t",
+              "Entity": "technologies",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "Not": {
+                  "Expression": {
+                    "Contains": {
+                      "Left": {
+                        "Column": {
+                          "Expression": {
+                            "SourceRef": {
+                              "Source": "t"
+                            }
+                          },
+                          "Property": "technology"
+                        }
+                      },
+                      "Right": {
+                        "Literal": {
+                          "Value": "'_tech'"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
       },
       {
-        "name": "33d44af15ba9f8aaf3fd",
+        "name": "2fd1511daccc0b19e2a6",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -136,7 +173,7 @@
         "type": "Advanced"
       },
       {
-        "name": "68f5b920f297f67817a8",
+        "name": "22c95694a7a19cdc25dd",
         "field": {
           "Column": {
             "Expression": {

@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "451c4c4c110c69495373",
+  "name": "6af4a9be2d2363e19626",
   "position": {
     "x": 0,
     "y": 0,
-    "z": 0,
-    "height": 461.03343465045594,
-    "width": 633.19148936170211,
-    "tabOrder": 0
+    "z": 1,
+    "height": 720.43715846994542,
+    "width": 640.49960967993752,
+    "tabOrder": 1
   },
   "visual": {
-    "visualType": "donutChart",
+    "visualType": "columnChart",
     "query": {
       "queryState": {
         "Category": {
@@ -20,15 +20,33 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "building_ownership"
+                      "Entity": "interest_groups"
                     }
                   },
-                  "Property": "ownership_type"
+                  "Property": "definition"
                 }
               },
-              "queryRef": "building_ownership.ownership_type",
-              "nativeQueryRef": "ownership_type",
+              "queryRef": "interest_groups.definition",
+              "nativeQueryRef": "definition",
               "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "country_rankings"
+                    }
+                  },
+                  "Property": "rank"
+                }
+              },
+              "queryRef": "country_rankings.rank",
+              "nativeQueryRef": "rank"
             }
           ]
         },
@@ -39,14 +57,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "building_ownership"
+                      "Entity": "interest_groups"
                     }
                   },
-                  "Property": "gross"
+                  "Property": "gdp_clout"
                 }
               },
-              "queryRef": "building_ownership.gross",
-              "nativeQueryRef": "gross"
+              "queryRef": "interest_groups.gdp_clout",
+              "nativeQueryRef": "gdp_clout"
             }
           ]
         }
@@ -58,10 +76,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "building_ownership"
+                    "Entity": "interest_groups"
                   }
                 },
-                "Property": "gross"
+                "Property": "gdp_clout"
               }
             },
             "direction": "Descending"
@@ -75,29 +93,43 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "38d4fb54f7db286ee0bc",
+        "name": "037fcbd289496660a28e",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "building_ownership"
+                "Entity": "interest_groups"
               }
             },
-            "Property": "ownership_type"
+            "Property": "definition"
           }
         },
         "type": "Categorical"
       },
       {
-        "name": "67b36486a8a740042c60",
+        "name": "c9a4eb3d73561dc245e7",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "country_rankings"
+              }
+            },
+            "Property": "rank"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "7856c7c006db9290e421",
         "field": {
           "Measure": {
             "Expression": {
               "SourceRef": {
-                "Entity": "building_ownership"
+                "Entity": "interest_groups"
               }
             },
-            "Property": "gross"
+            "Property": "gdp_clout"
           }
         },
         "type": "Advanced"

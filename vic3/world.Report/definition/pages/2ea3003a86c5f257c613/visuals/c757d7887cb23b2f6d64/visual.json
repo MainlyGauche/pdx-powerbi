@@ -3,10 +3,10 @@
   "name": "c757d7887cb23b2f6d64",
   "position": {
     "x": 0,
-    "y": 80.729483282674778,
+    "y": 0,
     "z": 0,
-    "height": 639.02735562310033,
-    "width": 1280,
+    "height": 719.75683890577511,
+    "width": 1068.936170212766,
     "tabOrder": 0
   },
   "visual": {
@@ -153,5 +153,56 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2bf6eacae5f1e1dc43de",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "state_saturation"
+              }
+            },
+            "Property": "saturation"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "f3f6ef59b054e5dec47e",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "pops"
+                  }
+                },
+                "Property": "workforce"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a2e38d02d9b3b6f4d3f1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "country_rankings"
+              }
+            },
+            "Property": "rank"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

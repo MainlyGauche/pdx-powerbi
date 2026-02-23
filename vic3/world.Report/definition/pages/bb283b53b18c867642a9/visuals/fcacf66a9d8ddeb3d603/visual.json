@@ -46,7 +46,8 @@
                 }
               },
               "queryRef": "building_ownership.cost",
-              "nativeQueryRef": "cost"
+              "nativeQueryRef": "cost",
+              "format": "0.00"
             }
           ]
         }

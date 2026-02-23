@@ -5,7 +5,7 @@ table state_saturation
 		dataType: int64
 		formatString: 0
 		lineageTag: 321cfde1-e8cc-4bda-ab96-3ffb3e8f9658
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: saturation
 
 		annotation SummarizationSetBy = Automatic
@@ -29,7 +29,7 @@ table state_saturation
 				in
 				    #"Changed Type"
 
-	annotation PBI_ResultType = Table
+	annotation PBI_ResultType = Exception
 
 	annotation PBI_NavigationStepName = Navigation
 

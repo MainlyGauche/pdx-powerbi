@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "b390093faf17e54eab78",
+  "name": "6f4f0e07b19c86bd5aca",
   "position": {
     "x": 0,
-    "y": 0,
-    "z": 2000,
-    "height": 321.94528875379939,
-    "width": 320,
-    "tabOrder": 2000
+    "y": 563.55971896955509,
+    "z": 2,
+    "height": 156.87743950039032,
+    "width": 721.43637782982046,
+    "tabOrder": 2
   },
   "visual": {
     "visualType": "card",
@@ -25,14 +25,14 @@
                           "Entity": "buildings"
                         }
                       },
-                      "Property": "investment"
+                      "Property": "gross"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "Sum(buildings.investment)",
-              "nativeQueryRef": "Sum of investment"
+              "queryRef": "Sum(buildings.gross)",
+              "nativeQueryRef": "Sum of gross"
             }
           ]
         }
@@ -49,7 +49,7 @@
                         "Entity": "buildings"
                       }
                     },
-                    "Property": "investment"
+                    "Property": "gross"
                   }
                 },
                 "Function": 0
@@ -66,7 +66,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "7f294b415f9b5a2510f9",
+        "name": "b3d7e80454407117cd6e",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -76,7 +76,7 @@
                     "Entity": "buildings"
                   }
                 },
-                "Property": "investment"
+                "Property": "gross"
               }
             },
             "Function": 0

@@ -76,6 +76,22 @@ relationship 20102050-a012-527f-29e8-f039c442b659
 	toColumn: countries.id
 
 relationship AutoDetected_e5013e84-0eb5-4324-9c3d-2223c2e851a5
+	isActive: false
 	fromColumn: buildings.state
 	toColumn: state_saturation.state
+
+relationship 337bb6ff-bdeb-087b-7d3b-9f6dd61cb606
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: state_saturation.state
+	toColumn: states.id
+
+relationship AutoDetected_a8206a36-7a65-4496-be39-8556f8e72722
+	isActive: false
+	fromColumn: interest_groups.country
+	toColumn: country_rankings.country
+
+relationship f348300e-2350-3468-9dd8-75a14666b56b
+	fromColumn: interest_groups.country
+	toColumn: countries.id
 

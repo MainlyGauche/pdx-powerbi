@@ -1,0 +1,133 @@
+table interest_groups
+	lineageTag: 892bdd1b-0710-43fd-b280-4a08aff16353
+
+	/// the country's workforce weighted by the IG's clout
+	measure workforce_clout =
+			SUMX(
+			    interest_groups,
+			    interest_groups[clout] * CALCULATE(SUM(pops[workforce]))
+			)
+		lineageTag: 2440ef89-d160-4ea9-b94f-c168de4ba927
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure gdp_clout =
+			SUMX(
+			    interest_groups,
+			    interest_groups[clout] * CALCULATE(SUM(buildings[gross]))
+			)
+		lineageTag: 5d092747-e988-4822-a10f-4879cb05e805
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column id
+		dataType: int64
+		formatString: 0
+		lineageTag: 90e0e8ce-f65d-401d-948e-9a71eacbd726
+		summarizeBy: sum
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column definition
+		dataType: string
+		lineageTag: 2b3d2d6e-1c04-4f95-bd04-12f92d62eee0
+		summarizeBy: none
+		sourceColumn: definition
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: int64
+		formatString: 0
+		lineageTag: cbbc223f-b824-4241-ac06-44a7d68fbc32
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column political_strength
+		dataType: int64
+		formatString: 0
+		lineageTag: 10985654-e56b-4f2c-b089-c8369368381c
+		summarizeBy: sum
+		sourceColumn: political_strength
+
+		annotation SummarizationSetBy = Automatic
+
+	column clout
+		dataType: double
+		lineageTag: 758dea92-285b-4122-9d34-8a8e44a486c5
+		summarizeBy: sum
+		sourceColumn: clout
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column in_government
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: c4034a61-2914-4182-bf7d-5aec6b43b4f6
+		summarizeBy: none
+		sourceColumn: in_government
+
+		annotation SummarizationSetBy = Automatic
+
+	column approval
+		dataType: int64
+		formatString: 0
+		lineageTag: 612e8d5c-f187-4d5f-8db7-25d04190eed0
+		summarizeBy: sum
+		sourceColumn: approval
+
+		annotation SummarizationSetBy = Automatic
+
+	column approval_state
+		dataType: string
+		lineageTag: 3119229f-a4fa-4077-9a99-c0a887ad77f9
+		summarizeBy: none
+		sourceColumn: approval_state
+
+		annotation SummarizationSetBy = Automatic
+
+	column character_ideologies
+		dataType: string
+		lineageTag: 580226bb-2516-4560-b578-5ef491d22016
+		summarizeBy: none
+		sourceColumn: character_ideologies
+
+		annotation SummarizationSetBy = Automatic
+
+	column party
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f55b6da-3d12-4a75-a6c7-cb09e1a147dd
+		summarizeBy: sum
+		sourceColumn: party
+
+		annotation SummarizationSetBy = Automatic
+
+	column party_to_join
+		dataType: int64
+		formatString: 0
+		lineageTag: 960a0c50-4e1d-4410-b528-5dd062bcc149
+		summarizeBy: sum
+		sourceColumn: party_to_join
+
+		annotation SummarizationSetBy = Automatic
+
+	partition interest_groups = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(Root & "\interest_groups.csv"),[Delimiter=",", Columns=11, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"id", Int64.Type}, {"definition", type text}, {"country", Int64.Type}, {"political_strength", Int64.Type}, {"clout", type number}, {"in_government", type logical}, {"approval", Int64.Type}, {"approval_state", type text}, {"character_ideologies", type text}, {"party", Int64.Type}, {"party_to_join", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Exception
+
+	annotation PBI_NavigationStepName = Navigation
+
