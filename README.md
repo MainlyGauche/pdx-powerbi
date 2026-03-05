@@ -9,15 +9,15 @@ Currently just Vic3 is supported: what "friendly" means is a matter of taste and
 If your save is `save.v3`, then from Bash,
 
 ```bash
-world_db.sh vic3 save.v3 $USERPROFILE/world
+world_db.sh save.v3 $USERPROFILE/world
 ```
 
 This produces a directory of CSVs at that final argument — one for each interesting top-level `database` in the save, plus some derived datasets generated from `queries/`.
 
-Then, 
+Then,
 
 1. Open `vic3/world.pbip`
-2. Click Home > Transform data > Edit parameters 
+2. Click Home > Transform data > Edit parameters
 3. Edit the Root parameter to whatever `$USERPROFILE/world` expanded to on your machine, e.g. `C:\Users\middle-aged-autist\world`
 4. Refresh at least the data. The button's right next to Transform data.
 5. Bask in charts like the industrious businessfellow you are
@@ -26,7 +26,7 @@ Then,
 
 Install the [latest Rakaly](https://github.com/rakaly/cli/releases/latest) and add it to your `PATH`.
 
-On Windows, get the other dependencies with 
+On Windows, get the other dependencies with
 
 ```powershell
 winget install Git.Git # for Bash

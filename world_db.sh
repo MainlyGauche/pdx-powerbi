@@ -1,22 +1,30 @@
 #!/bin/bash
 
-# Generates a directory of CSVs from a Vic3 save, via DuckDB.
+# Generates a directory of CSVs from a Paradox save, via DuckDB.
+# The game is inferred from the save file extension (e.g. .v3 → vic3).
 # Each top-level key in the munged JSON becomes a table (and a CSV),
 # then each .sql file in queries/ is run and its result is also exported.
 
 set -e
 
-if [ $# -lt 3 ]; then
-	echo "Usage: $0 <game> <input.v3> <output_dir>" >&2
-	echo "  game: Game subdirectory (e.g. vic3)" >&2
-	echo "  input.v3: Save file" >&2
+if [ $# -lt 2 ]; then
+	echo "Usage: $0 <input_save> <output_dir>" >&2
+	echo "  input_save: Save file (extension determines game: .v3 → vic3)" >&2
 	echo "  output_dir: Output directory for CSV files" >&2
 	exit 1
 fi
 
-GAME="$1"
-INPUT_SAVE="$2"
-OUTPUT_DIR="$3"
+INPUT_SAVE="$1"
+OUTPUT_DIR="$2"
+
+EXT="${INPUT_SAVE##*.}"
+case "$EXT" in
+	v3) GAME="vic3" ;;
+	*)
+		echo "Error: Unknown save file extension '.$EXT'" >&2
+		exit 1
+		;;
+esac
 SCRIPT_DIR="$(dirname "$0")"
 QUERIES_DIR="$SCRIPT_DIR/$GAME/queries"
 
