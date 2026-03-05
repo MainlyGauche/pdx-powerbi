@@ -81,6 +81,14 @@ table buildings
 
 		annotation SummarizationSetBy = Automatic
 
+	column staffing_fraction = buildings[staffing] / buildings[levels]
+		lineageTag: 2b6bdef3-c52a-449c-8e89-3a858e118f83
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition buildings = m
 		mode: import
 		source =
