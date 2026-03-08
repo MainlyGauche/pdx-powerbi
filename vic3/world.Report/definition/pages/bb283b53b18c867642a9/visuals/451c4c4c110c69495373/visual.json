@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "451c4c4c110c69495373",
   "position": {
     "x": 0,
@@ -71,37 +71,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "38d4fb54f7db286ee0bc",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "building_ownership"
-              }
-            },
-            "Property": "ownership_type"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "67b36486a8a740042c60",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "building_ownership"
-              }
-            },
-            "Property": "gross"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

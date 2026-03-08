@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "9cea0b5d1ab0a8bd4aa6",
   "position": {
     "x": 721.43637782982046,
     "y": 0,
-    "z": 1,
+    "z": 1000,
     "height": 720.43715846994542,
     "width": 558.56362217017954,
-    "tabOrder": 1
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "barChart",
@@ -81,42 +81,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "a0741e100c6008823995",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "buildings"
-                  }
-                },
-                "Property": "gross"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "c8cb00c00aa12d9c18b6",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "country_rankings"
-              }
-            },
-            "Property": "rank"
-          }
-        },
-        "type": "Categorical"
-      }
-    ]
   }
 }

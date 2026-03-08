@@ -1,16 +1,15 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
-  "name": "f7f454ce40d754b33739",
+  "name": "e7af6bed4d2008339ac3",
   "position": {
-    "x": 592.34042553191489,
-    "y": 0,
-    "z": 2000,
-    "height": 359.87841945288756,
-    "width": 687.65957446808511,
-    "tabOrder": 2000
+    "x": 0,
+    "y": 32.846034214618975,
+    "z": 0,
+    "height": 686.78071539657856,
+    "width": 889.82892690513222
   },
   "visual": {
-    "visualType": "donutChart",
+    "visualType": "clusteredColumnChart",
     "query": {
       "queryState": {
         "Category": {
@@ -23,11 +22,11 @@
                       "Entity": "buildings"
                     }
                   },
-                  "Property": "building_simplified"
+                  "Property": "profit_per_level"
                 }
               },
-              "queryRef": "buildings.building_simplified",
-              "nativeQueryRef": "building_simplified",
+              "queryRef": "buildings.dividends_per_level",
+              "nativeQueryRef": "profit_per_level",
               "active": true
             }
           ]
@@ -44,14 +43,14 @@
                           "Entity": "buildings"
                         }
                       },
-                      "Property": "investment"
+                      "Property": "levels"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "Sum(buildings.investment)",
-              "nativeQueryRef": "Sum of investment"
+              "queryRef": "Sum(buildings.levels)",
+              "nativeQueryRef": "Sum of levels"
             }
           ]
         }
@@ -68,7 +67,7 @@
                         "Entity": "buildings"
                       }
                     },
-                    "Property": "investment"
+                    "Property": "levels"
                   }
                 },
                 "Function": 0
@@ -81,5 +80,42 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e0c15a9916b95ea45207",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "buildings"
+              }
+            },
+            "Property": "profit_per_level"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9b783e80b02561469658",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "buildings"
+                  }
+                },
+                "Property": "levels"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

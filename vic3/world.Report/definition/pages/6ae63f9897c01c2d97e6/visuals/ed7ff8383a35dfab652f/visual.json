@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "ed7ff8383a35dfab652f",
   "position": {
     "x": 320,
     "y": 0,
-    "z": 3001,
+    "z": 3000,
     "height": 321.94528875379939,
     "width": 272.34042553191489,
-    "tabOrder": 3001
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "tableEx",
@@ -169,20 +169,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "afb0d75f018f380d3c04",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "countries"
-              }
-            },
-            "Property": "definition"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

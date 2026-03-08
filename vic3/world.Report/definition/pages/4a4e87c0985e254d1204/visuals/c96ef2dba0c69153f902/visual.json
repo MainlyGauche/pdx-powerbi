@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "c96ef2dba0c69153f902",
   "position": {
     "x": 13.617021276595745,
@@ -152,39 +152,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "2fd1511daccc0b19e2a6",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "technologies"
-                  }
-                },
-                "Property": "country"
-              }
-            },
-            "Function": 5
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "22c95694a7a19cdc25dd",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "country_rankings"
-              }
-            },
-            "Property": "rank"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

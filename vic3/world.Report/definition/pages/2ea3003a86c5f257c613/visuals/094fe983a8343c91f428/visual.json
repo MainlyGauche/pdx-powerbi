@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "094fe983a8343c91f428",
   "position": {
     "x": 1072.8267477203649,
     "y": 80.729483282674778,
-    "z": 2001,
+    "z": 2000,
     "height": 639.02735562310033,
     "width": 207.17325227963528,
-    "tabOrder": 2001
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "tableEx",
@@ -168,20 +168,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "4583048d36d7cbf93453",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "states"
-              }
-            },
-            "Property": "region"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

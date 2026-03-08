@@ -89,18 +89,42 @@ table buildings
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	column profit_per_level = ROUND(buildings[profit] / buildings[levels], -1)
+		lineageTag: beb6ad0e-f3b2-42bd-8ad1-62a2b480379f
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column profit
+		dataType: string
+		lineageTag: deb74ce1-cea5-4f2a-9119-e6e9f5654993
+		summarizeBy: none
+		sourceColumn: profit
+
+		annotation SummarizationSetBy = Automatic
+
+	column wages
+		dataType: string
+		lineageTag: a8f240c2-911a-4791-843f-732d343e580b
+		summarizeBy: none
+		sourceColumn: wages
+
+		annotation SummarizationSetBy = Automatic
+
 	partition buildings = m
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents(Root & "\buildings.csv"),[Delimiter=",", Columns=8, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(File.Contents(Root & "\buildings.csv"),[Delimiter=",", Columns=10, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"id", Int64.Type}, {"building", type text}, {"state", Int64.Type}, {"levels", Int64.Type}, {"staffing", type number}, {"dividends", type number}, {"gross", type number}, {"investment", type number}}),
 				    #"Added Custom" = Table.AddColumn(#"Changed Type", "building_simplified", each if Text.Contains([building], "company") then "company" else if Text.Contains([building], "subsistence") then "subsistence" else if Text.Contains([building], "farm") then "farm" else [building])
 				in
 				    #"Added Custom"
 
-	annotation PBI_ResultType = Exception
+	annotation PBI_ResultType = Table
 
 	annotation PBI_NavigationStepName = Navigation
 

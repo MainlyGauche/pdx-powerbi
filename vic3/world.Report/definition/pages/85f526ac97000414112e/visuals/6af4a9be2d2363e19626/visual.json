@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "6af4a9be2d2363e19626",
   "position": {
     "x": 0,
     "y": 0,
-    "z": 1,
+    "z": 0,
     "height": 720.43715846994542,
     "width": 640.49960967993752,
-    "tabOrder": 1
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "columnChart",
@@ -89,51 +89,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "037fcbd289496660a28e",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "interest_groups"
-              }
-            },
-            "Property": "definition"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "c9a4eb3d73561dc245e7",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "country_rankings"
-              }
-            },
-            "Property": "rank"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "7856c7c006db9290e421",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "interest_groups"
-              }
-            },
-            "Property": "gdp_clout"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

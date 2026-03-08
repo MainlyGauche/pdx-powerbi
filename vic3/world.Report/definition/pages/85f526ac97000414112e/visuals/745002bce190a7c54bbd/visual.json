@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "745002bce190a7c54bbd",
   "position": {
     "x": 664.48087431693989,
     "y": 0,
-    "z": 2,
+    "z": 1000,
     "height": 720.43715846994542,
     "width": 615.51912568306011,
-    "tabOrder": 2
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "columnChart",
@@ -93,20 +93,6 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "5e528467a6980617e0c1",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "interest_groups"
-              }
-            },
-            "Property": "definition"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
         "name": "2b57b902801ed2bb60a7",
         "field": {
           "Column": {
@@ -173,34 +159,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "7001750307e5dd00000b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "countries"
-              }
-            },
-            "Property": "definition"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "9facdcb01e644504ca51",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "interest_groups"
-              }
-            },
-            "Property": "gdp_clout"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

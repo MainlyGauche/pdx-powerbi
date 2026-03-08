@@ -66,7 +66,9 @@ def to_rows: to_entries | .[] | squish;
 			staffing,
 			dividends,
 			gross: (.goods_sales // 0)  - (.goods_cost // 0),
+			profit: (.profit_after_reserves // 0),
 			investment: (.profit_after_reserves // 0) - (.profit_after_investments // 0),
+			wages: (.goods_sales // 0)  - (.goods_cost // 0) - (.profit_after_reserves // 0) + (.balance_subsidies // 0),
 		}],
 	building_ownership : [.building_ownership_manager.database | to_rows | 
 		select(.levels > 0) | {
