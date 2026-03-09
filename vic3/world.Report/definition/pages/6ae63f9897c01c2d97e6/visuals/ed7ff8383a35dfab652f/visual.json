@@ -5,7 +5,7 @@
     "x": 320,
     "y": 0,
     "z": 3000,
-    "height": 321.94528875379939,
+    "height": 359.87841945288756,
     "width": 272.34042553191489,
     "tabOrder": 3000
   },
@@ -169,6 +169,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "bb00fabc61008e040280",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "countries"
+              }
+            },
+            "Property": "definition"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

@@ -5,7 +5,7 @@
     "x": 0,
     "y": 0,
     "z": 1000,
-    "height": 321.94528875379939,
+    "height": 359.87841945288756,
     "width": 320,
     "tabOrder": 1000
   },
@@ -62,5 +62,28 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "d2fe71cc4c179647678d",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "buildings"
+                  }
+                },
+                "Property": "investment"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

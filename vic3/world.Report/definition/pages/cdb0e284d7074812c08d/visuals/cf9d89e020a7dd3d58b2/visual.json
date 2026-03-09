@@ -61,14 +61,14 @@
                           "Entity": "units"
                         }
                       },
-                      "Property": "manpower"
+                      "Property": "country"
                     }
                   },
-                  "Function": 0
+                  "Function": 5
                 }
               },
-              "queryRef": "Sum(units.manpower)",
-              "nativeQueryRef": "Sum of manpower"
+              "queryRef": "CountNonNull(units.country)",
+              "nativeQueryRef": "Count of country"
             }
           ]
         }
@@ -85,10 +85,10 @@
                         "Entity": "units"
                       }
                     },
-                    "Property": "manpower"
+                    "Property": "country"
                   }
                 },
-                "Function": 0
+                "Function": 5
               }
             },
             "direction": "Descending"
@@ -116,25 +116,6 @@
         "type": "Categorical"
       },
       {
-        "name": "60bf7ab3ead7e2da4a2c",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "units"
-                  }
-                },
-                "Property": "manpower"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
         "name": "baf2f8e330023d5a07b2",
         "field": {
           "Column": {
@@ -147,6 +128,25 @@
           }
         },
         "type": "Categorical"
+      },
+      {
+        "name": "ec1ec25fd8be51617bbd",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "units"
+                  }
+                },
+                "Property": "country"
+              }
+            },
+            "Function": 5
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }
