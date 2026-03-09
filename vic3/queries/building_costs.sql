@@ -62,6 +62,7 @@ values -- industry (high = 600)
   ('building_banana_plantation', 200),
   ('building_silk_plantation', 200),
   ('building_rubber_plantation', 200),
+  ('building_vineyard', 200),
   ('building_mint_tea_plantation', 200),
   ('building_wyrmfruit_plantation', 200),
   ('building_songberry_plantation', 200),
@@ -112,7 +113,7 @@ values -- industry (high = 600)
   ('building_tavern', 100),
   ('building_trade_center', 100),
   -- infrastructure (low = 200)
-  ('building_magic_carpet_store', 100),
+  ('building_magic_carpet_store', 200),
   -- infrastructure (medium = 400)
   ('building_port', 400),
   ('building_airship_dock', 400),
