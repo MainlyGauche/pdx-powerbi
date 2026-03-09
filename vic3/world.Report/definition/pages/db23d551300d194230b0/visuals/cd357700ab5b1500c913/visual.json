@@ -1,0 +1,153 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "cd357700ab5b1500c913",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "height": 719.75683890577511,
+    "width": 771.306990881459
+  },
+  "visual": {
+    "visualType": "columnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "country_rankings"
+                    }
+                  },
+                  "Property": "rank"
+                }
+              },
+              "queryRef": "country_rankings.rank",
+              "nativeQueryRef": "rank",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "units"
+                    }
+                  },
+                  "Property": "type.1"
+                }
+              },
+              "queryRef": "units.type.1",
+              "nativeQueryRef": "type.1"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "units"
+                        }
+                      },
+                      "Property": "manpower"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(units.manpower)",
+              "nativeQueryRef": "Sum of manpower"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "units"
+                      }
+                    },
+                    "Property": "manpower"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "72b82a2f2e2e10e00b0e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "country_rankings"
+              }
+            },
+            "Property": "rank"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "fa28cef389c9444684ae",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "units"
+              }
+            },
+            "Property": "type.1"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "5fb1b2d9e06e40e0d170",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "units"
+                  }
+                },
+                "Property": "manpower"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
+  }
+}

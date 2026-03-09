@@ -63,11 +63,13 @@ table country_balances
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents("C:\Users\patri\vic3-data\exether\country_balances.csv"),[Delimiter=",", Columns=6, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(File.Contents(Root & "\country_balances.csv"),[Delimiter=",", Columns=6, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"country", Int64.Type}, {"authority", type number}, {"barracks", Int64.Type}, {"bureaucracy", type number}, {"prestige", type number}, {"innovation", type number}})
 				in
 				    #"Changed Type"
 
 	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
 

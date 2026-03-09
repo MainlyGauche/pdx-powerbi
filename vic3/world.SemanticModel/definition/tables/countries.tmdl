@@ -9,6 +9,14 @@ table countries
 		formatString: 0
 		lineageTag: 0a39ba56-d66e-4f05-aea5-917e78610d5b
 
+	measure law_workforce =
+			CALCULATE(
+			    SUM(pops[workforce]),
+			    INTERSECT(VALUES(countries[id]), SELECTCOLUMNS(laws, "id", laws[country]))
+			)
+		formatString: 0
+		lineageTag: 5a3dd420-2049-4717-ac82-e9138f0011ba
+
 	column id
 		dataType: int64
 		formatString: 0
