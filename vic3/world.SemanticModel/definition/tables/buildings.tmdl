@@ -89,7 +89,7 @@ table buildings
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	column profit_per_level = ROUND(buildings[profit] / buildings[levels], -1)
+	column profit_per_cp = ROUND(DIVIDE(buildings[profit] / buildings[levels], RELATED(building_costs[cost])), 2)
 		lineageTag: beb6ad0e-f3b2-42bd-8ad1-62a2b480379f
 		summarizeBy: sum
 

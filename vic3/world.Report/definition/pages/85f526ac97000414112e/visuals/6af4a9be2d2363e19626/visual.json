@@ -89,5 +89,51 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "dc773c86e1bb030d9c54",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "interest_groups"
+              }
+            },
+            "Property": "definition"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4d9af2b3a94a44d2db9e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "country_rankings"
+              }
+            },
+            "Property": "rank"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "5b8033f8049a0d446640",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "interest_groups"
+              }
+            },
+            "Property": "gdp_clout"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

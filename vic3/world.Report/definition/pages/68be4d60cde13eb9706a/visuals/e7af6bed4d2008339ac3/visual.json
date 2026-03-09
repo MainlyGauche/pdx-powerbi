@@ -9,7 +9,7 @@
     "width": 889.82892690513222
   },
   "visual": {
-    "visualType": "clusteredColumnChart",
+    "visualType": "columnChart",
     "query": {
       "queryState": {
         "Category": {
@@ -22,11 +22,11 @@
                       "Entity": "buildings"
                     }
                   },
-                  "Property": "profit_per_level"
+                  "Property": "profit_per_cp"
                 }
               },
               "queryRef": "buildings.dividends_per_level",
-              "nativeQueryRef": "profit_per_level",
+              "nativeQueryRef": "profit_per_cp",
               "active": true
             }
           ]
@@ -102,7 +102,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "e0c15a9916b95ea45207",
+        "name": "fd6cd63f84b903ad7593",
         "field": {
           "Column": {
             "Expression": {
@@ -110,13 +110,27 @@
                 "Entity": "buildings"
               }
             },
-            "Property": "profit_per_level"
+            "Property": "profit_per_cp"
           }
         },
         "type": "Advanced"
       },
       {
-        "name": "9b783e80b02561469658",
+        "name": "679c50ac35b8b99998e5",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "country_rankings"
+              }
+            },
+            "Property": "rank"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f664871ea63e0a9dcee6",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -133,20 +147,6 @@
           }
         },
         "type": "Advanced"
-      },
-      {
-        "name": "5c74ba9e8765b90cc223",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "country_rankings"
-              }
-            },
-            "Property": "rank"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

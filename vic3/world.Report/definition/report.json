@@ -20,40 +20,6 @@
       "type": "SharedResources"
     }
   },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "6569e3169b0edaa48a1d",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "country_rankings"
-              }
-            },
-            "Property": "rank"
-          }
-        },
-        "type": "Categorical",
-        "howCreated": "User",
-        "objects": {
-          "general": [
-            {
-              "properties": {
-                "isInvertedSelectionMode": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "true"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        }
-      }
-    ]
-  },
   "objects": {
     "section": [
       {

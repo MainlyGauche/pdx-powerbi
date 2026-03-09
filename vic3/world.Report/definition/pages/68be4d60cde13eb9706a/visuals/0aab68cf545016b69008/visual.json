@@ -25,14 +25,14 @@
                           "Entity": "buildings"
                         }
                       },
-                      "Property": "profit_per_level"
+                      "Property": "profit_per_cp"
                     }
                   },
                   "Function": 0
                 }
               },
               "queryRef": "Sum(buildings.profit_per_level)",
-              "nativeQueryRef": "Sum of profit_per_level"
+              "nativeQueryRef": "Sum of profit_per_cp"
             },
             {
               "field": {
@@ -83,13 +83,18 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Aggregation": {
                 "Expression": {
-                  "SourceRef": {
-                    "Entity": "countries"
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "buildings"
+                      }
+                    },
+                    "Property": "profit_per_cp"
                   }
                 },
-                "Property": "definition"
+                "Function": 0
               }
             },
             "direction": "Ascending"
@@ -112,7 +117,7 @@
                     "Entity": "buildings"
                   }
                 },
-                "Property": "profit_per_level"
+                "Property": "profit_per_cp"
               }
             },
             "Function": 0

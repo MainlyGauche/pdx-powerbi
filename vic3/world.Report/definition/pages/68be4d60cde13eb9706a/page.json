@@ -8,7 +8,68 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "c0b4b595b55131b80903",
+        "name": "1c381fdd5800b7e02026",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "building_ownership"
+              }
+            },
+            "Property": "ownership_type"
+          }
+        },
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "b",
+              "Entity": "building_ownership",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "b"
+                          }
+                        },
+                        "Property": "ownership_type"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'private'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'workforce'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        "howCreated": "User"
+      },
+      {
+        "name": "d5cdfc14a80866000668",
         "field": {
           "Column": {
             "Expression": {
@@ -16,7 +77,7 @@
                 "Entity": "buildings"
               }
             },
-            "Property": "building_simplified"
+            "Property": "building"
           }
         },
         "type": "Categorical",
@@ -43,18 +104,11 @@
                                 "Source": "b"
                               }
                             },
-                            "Property": "building_simplified"
+                            "Property": "building"
                           }
                         }
                       ],
                       "Values": [
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'building_airship_dock'"
-                            }
-                          }
-                        ],
                         [
                           {
                             "Literal": {
@@ -86,7 +140,182 @@
                         [
                           {
                             "Literal": {
-                              "Value": "'building_collapsed_godsbane_vault'"
+                              "Value": "'building_company_basic_colonial_plantations_2'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_company_basic_home_goods'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_company_basic_magic_mining'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_company_basic_metal_mining'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_company_basic_mineral_mining'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_company_basic_soulwrought'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_company_brinewick'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_company_chr_hansens'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_company_clearbough_estates'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_company_craggedwyn'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_company_ebonreach_group'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_company_fyrestorm'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_company_j_p_coats'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_company_jingleroot'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_company_jolly_company'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_company_jollyjumper'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_company_murads_sweepers'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_company_narathun_chirurgical'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_company_skysail'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_company_south_sea_company'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_company_thundergear'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_company_vhaulirb'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_company_vic'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_company_wishscribers'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_company_wolfslayers_guild'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_company_yelfiegun'"
                             }
                           }
                         ],
@@ -156,6 +385,13 @@
                         [
                           {
                             "Literal": {
+                              "Value": "'building_goblin_ruins'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
                               "Value": "'building_gold_field'"
                             }
                           }
@@ -164,6 +400,13 @@
                           {
                             "Literal": {
                               "Value": "'building_government_administration'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_halfling_ruins'"
                             }
                           }
                         ],
@@ -192,6 +435,13 @@
                           {
                             "Literal": {
                               "Value": "'building_khoymegass_casino'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_lizard_ruins'"
                             }
                           }
                         ],
@@ -261,14 +511,56 @@
                         [
                           {
                             "Literal": {
-                              "Value": "'building_temple_of_tulips'"
+                              "Value": "'building_subsistence_farm'"
                             }
                           }
                         ],
                         [
                           {
                             "Literal": {
-                              "Value": "'building_underground_wharf'"
+                              "Value": "'building_subsistence_fishing_village'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_subsistence_lichen_farms'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_subsistence_orchard'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_subsistence_pasture'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_subsistence_rice_farm'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_subsistence_terrace_farm'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'building_temple_of_tulips'"
                             }
                           }
                         ],
@@ -290,27 +582,6 @@
                           {
                             "Literal": {
                               "Value": "'building_wizard_tower'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'company'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'subsistence'"
-                            }
-                          }
-                        ],
-                        [
-                          {
-                            "Literal": {
-                              "Value": "'building_arritz_ruins'"
                             }
                           }
                         ]
@@ -338,121 +609,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "1c381fdd5800b7e02026",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "building_ownership"
-              }
-            },
-            "Property": "ownership_type"
-          }
-        },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "b",
-              "Entity": "building_ownership",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "b"
-                          }
-                        },
-                        "Property": "ownership_type"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'private'"
-                        }
-                      }
-                    ],
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'workforce'"
-                        }
-                      }
-                    ]
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User"
-      },
-      {
-        "name": "7312bfc572eab0b26194",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "buildings"
-              }
-            },
-            "Property": "building_simplified"
-          }
-        },
-        "type": "Categorical",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "b",
-              "Entity": "buildings",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "In": {
-                  "Expressions": [
-                    {
-                      "Column": {
-                        "Expression": {
-                          "SourceRef": {
-                            "Source": "b"
-                          }
-                        },
-                        "Property": "building_simplified"
-                      }
-                    }
-                  ],
-                  "Values": [
-                    [
-                      {
-                        "Literal": {
-                          "Value": "'building_arms_industry'"
-                        }
-                      }
-                    ]
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User"
       }
     ]
   }

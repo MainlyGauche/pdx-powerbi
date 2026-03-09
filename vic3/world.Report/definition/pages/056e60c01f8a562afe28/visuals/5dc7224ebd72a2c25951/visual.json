@@ -1,5 +1,5 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "5dc7224ebd72a2c25951",
   "position": {
     "x": 0,
@@ -149,5 +149,56 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "6fc475c250e5e0865a59",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "pops"
+              }
+            },
+            "Property": "wealth"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "77ccebcf0c4a6131dd04",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "country_rankings"
+              }
+            },
+            "Property": "rank"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "68350c7bc10047568cc2",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "pops"
+                  }
+                },
+                "Property": "workforce"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

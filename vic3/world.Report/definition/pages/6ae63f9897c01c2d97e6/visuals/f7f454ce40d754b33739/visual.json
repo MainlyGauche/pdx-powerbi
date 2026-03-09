@@ -81,5 +81,42 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e1c748bb7cabea206516",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "buildings"
+              }
+            },
+            "Property": "building_simplified"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a504d929765186c45a82",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "buildings"
+                  }
+                },
+                "Property": "investment"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

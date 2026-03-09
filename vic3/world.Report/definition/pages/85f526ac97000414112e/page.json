@@ -8,45 +8,61 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "c3353f8e20dbb62072a0",
+        "name": "f09c3f6823808b205b8a",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "buildings"
+                "Entity": "country_rankings"
               }
             },
-            "Property": "gross"
+            "Property": "rank"
           }
         },
-        "type": "Advanced",
+        "type": "Categorical",
         "filter": {
           "Version": 2,
           "From": [
             {
-              "Name": "b",
-              "Entity": "buildings",
+              "Name": "c",
+              "Entity": "country_rankings",
               "Type": 0
             }
           ],
           "Where": [
             {
               "Condition": {
-                "Comparison": {
-                  "ComparisonKind": 1,
-                  "Left": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "b"
+                "Not": {
+                  "Expression": {
+                    "In": {
+                      "Expressions": [
+                        {
+                          "Column": {
+                            "Expression": {
+                              "SourceRef": {
+                                "Source": "c"
+                              }
+                            },
+                            "Property": "rank"
+                          }
                         }
-                      },
-                      "Property": "gross"
-                    }
-                  },
-                  "Right": {
-                    "Literal": {
-                      "Value": "0L"
+                      ],
+                      "Values": [
+                        [
+                          {
+                            "Literal": {
+                              "Value": "'decentralized_power'"
+                            }
+                          }
+                        ],
+                        [
+                          {
+                            "Literal": {
+                              "Value": "null"
+                            }
+                          }
+                        ]
+                      ]
                     }
                   }
                 }
@@ -54,7 +70,22 @@
             }
           ]
         },
-        "howCreated": "User"
+        "howCreated": "User",
+        "objects": {
+          "general": [
+            {
+              "properties": {
+                "isInvertedSelectionMode": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "true"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
       }
     ]
   }

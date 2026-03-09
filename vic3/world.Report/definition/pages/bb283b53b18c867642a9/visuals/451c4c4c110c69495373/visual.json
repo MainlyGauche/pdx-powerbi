@@ -6,7 +6,7 @@
     "y": 0,
     "z": 0,
     "height": 461.03343465045594,
-    "width": 633.19148936170211,
+    "width": 648.75379939209733,
     "tabOrder": 0
   },
   "visual": {
@@ -71,5 +71,37 @@
       }
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "aace64c89267e34a148e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "building_ownership"
+              }
+            },
+            "Property": "ownership_type"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c335b1f9956e2c09b6d0",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "building_ownership"
+              }
+            },
+            "Property": "gross"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

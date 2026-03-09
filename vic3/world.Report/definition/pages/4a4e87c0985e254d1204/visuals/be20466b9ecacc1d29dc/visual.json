@@ -126,7 +126,7 @@
             "categorySize": {
               "expr": {
                 "Literal": {
-                  "Value": "17.224718065957177D"
+                  "Value": "30.483064716825723D"
                 }
               }
             }
@@ -135,5 +135,56 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "8d1e50da4017ee886e0c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "pops"
+              }
+            },
+            "Property": "literacy"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "acf835c8de56956b080b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "country_rankings"
+              }
+            },
+            "Property": "rank"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d32e800cbdb5c085b020",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "pops"
+                  }
+                },
+                "Property": "workforce"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
