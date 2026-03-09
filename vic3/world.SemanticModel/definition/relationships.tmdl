@@ -95,3 +95,29 @@ relationship f348300e-2350-3468-9dd8-75a14666b56b
 	fromColumn: interest_groups.country
 	toColumn: countries.id
 
+relationship AutoDetected_829b9b23-d257-462d-98ef-ec5829ec1b9f
+	isActive: false
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: country_balances.country
+	toColumn: country_rankings.country
+
+relationship AutoDetected_aa7eb724-1c5e-402c-9054-333c02832b6f
+	isActive: false
+	fromColumn: laws.country
+	toColumn: country_rankings.country
+
+relationship AutoDetected_a81b749b-db29-4679-9d56-e80f84694459
+	fromColumn: units.country
+	toColumn: country_rankings.country
+
+relationship f0fd9985-54c8-2e54-d11d-f8c3f2347ca6
+	fromColumn: laws.country
+	toColumn: countries.id
+
+relationship 53bbd146-08f3-639d-5165-eb62d8e01d65
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: country_balances.country
+	toColumn: countries.id
+

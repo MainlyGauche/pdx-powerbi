@@ -1,0 +1,73 @@
+table country_balances
+	lineageTag: 780de808-766e-405e-8720-1dca3dd62df0
+
+	column country
+		dataType: int64
+		formatString: 0
+		lineageTag: 41b4ef03-86aa-4288-80c1-1b27ef0e8f49
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column authority
+		dataType: double
+		lineageTag: f852c093-8e3b-4f1a-ad6e-00e0eee9bad9
+		summarizeBy: sum
+		sourceColumn: authority
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column barracks
+		dataType: int64
+		formatString: 0
+		lineageTag: 71940996-e083-481c-b48d-e3a29aad3dab
+		summarizeBy: sum
+		sourceColumn: barracks
+
+		annotation SummarizationSetBy = Automatic
+
+	column bureaucracy
+		dataType: double
+		lineageTag: 9e5af7f8-24fb-45ab-8c0c-dbf1c9e94413
+		summarizeBy: sum
+		sourceColumn: bureaucracy
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column prestige
+		dataType: double
+		lineageTag: 6b7dddfd-4ac5-43d7-a45b-5c46d824c4d3
+		summarizeBy: sum
+		sourceColumn: prestige
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column innovation
+		dataType: double
+		lineageTag: 22d7b8b4-273a-4fcb-ac70-85ccdc71b395
+		summarizeBy: sum
+		sourceColumn: innovation
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition country_balances = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\patri\vic3-data\exether\country_balances.csv"),[Delimiter=",", Columns=6, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"country", Int64.Type}, {"authority", type number}, {"barracks", Int64.Type}, {"bureaucracy", type number}, {"prestige", type number}, {"innovation", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

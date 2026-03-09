@@ -1,37 +1,18 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
-  "name": "e7af6bed4d2008339ac3",
+  "name": "cf9d89e020a7dd3d58b2",
   "position": {
     "x": 0,
-    "y": 32.846034214618975,
+    "y": 0,
     "z": 0,
-    "height": 686.78071539657856,
-    "width": 889.82892690513222
+    "height": 719.75683890577511,
+    "width": 771.306990881459
   },
   "visual": {
-    "visualType": "clusteredColumnChart",
+    "visualType": "columnChart",
     "query": {
       "queryState": {
         "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "buildings"
-                    }
-                  },
-                  "Property": "profit_per_level"
-                }
-              },
-              "queryRef": "buildings.dividends_per_level",
-              "nativeQueryRef": "profit_per_level",
-              "active": true
-            }
-          ]
-        },
-        "Series": {
           "projections": [
             {
               "field": {
@@ -45,7 +26,26 @@
                 }
               },
               "queryRef": "country_rankings.rank",
-              "nativeQueryRef": "rank"
+              "nativeQueryRef": "rank",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "units"
+                    }
+                  },
+                  "Property": "type.1"
+                }
+              },
+              "queryRef": "units.type.1",
+              "nativeQueryRef": "type.1"
             }
           ]
         },
@@ -58,17 +58,17 @@
                     "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Entity": "buildings"
+                          "Entity": "units"
                         }
                       },
-                      "Property": "levels"
+                      "Property": "manpower"
                     }
                   },
                   "Function": 0
                 }
               },
-              "queryRef": "Sum(buildings.levels)",
-              "nativeQueryRef": "Sum of levels"
+              "queryRef": "Sum(units.manpower)",
+              "nativeQueryRef": "Sum of manpower"
             }
           ]
         }
@@ -82,10 +82,10 @@
                   "Column": {
                     "Expression": {
                       "SourceRef": {
-                        "Entity": "buildings"
+                        "Entity": "units"
                       }
                     },
-                    "Property": "levels"
+                    "Property": "manpower"
                   }
                 },
                 "Function": 0
@@ -102,40 +102,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "e0c15a9916b95ea45207",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "buildings"
-              }
-            },
-            "Property": "profit_per_level"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "9b783e80b02561469658",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "buildings"
-                  }
-                },
-                "Property": "levels"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "5c74ba9e8765b90cc223",
+        "name": "722b32805373d33017b9",
         "field": {
           "Column": {
             "Expression": {
@@ -144,6 +111,39 @@
               }
             },
             "Property": "rank"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "60bf7ab3ead7e2da4a2c",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "units"
+                  }
+                },
+                "Property": "manpower"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "baf2f8e330023d5a07b2",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "units"
+              }
+            },
+            "Property": "type.1"
           }
         },
         "type": "Categorical"

@@ -1,0 +1,32 @@
+table laws
+	lineageTag: 817a5474-5e5e-47ba-9e7b-858955b72459
+
+	column country
+		dataType: int64
+		formatString: 0
+		lineageTag: ce0539ef-c120-44ba-bb8a-c205d587f548
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column law
+		dataType: string
+		lineageTag: feba32a2-2462-4985-850e-db6f293f9a8e
+		summarizeBy: none
+		sourceColumn: law
+
+		annotation SummarizationSetBy = Automatic
+
+	partition laws = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\patri\vic3-data\exether\laws.csv"),[Delimiter=",", Columns=2, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"country", Int64.Type}, {"law", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

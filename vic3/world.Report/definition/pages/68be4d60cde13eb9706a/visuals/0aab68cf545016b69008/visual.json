@@ -83,18 +83,13 @@
         "sort": [
           {
             "field": {
-              "Aggregation": {
+              "Column": {
                 "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "buildings"
-                      }
-                    },
-                    "Property": "profit_per_level"
+                  "SourceRef": {
+                    "Entity": "countries"
                   }
                 },
-                "Function": 0
+                "Property": "definition"
               }
             },
             "direction": "Ascending"

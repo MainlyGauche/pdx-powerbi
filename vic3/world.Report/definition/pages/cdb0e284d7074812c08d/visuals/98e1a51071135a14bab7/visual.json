@@ -1,37 +1,18 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
-  "name": "e7af6bed4d2008339ac3",
+  "name": "98e1a51071135a14bab7",
   "position": {
-    "x": 0,
-    "y": 32.846034214618975,
-    "z": 0,
-    "height": 686.78071539657856,
-    "width": 889.82892690513222
+    "x": 771.306990881459,
+    "y": 0,
+    "z": 1,
+    "height": 719.75683890577511,
+    "width": 508.69300911854106
   },
   "visual": {
-    "visualType": "clusteredColumnChart",
+    "visualType": "columnChart",
     "query": {
       "queryState": {
         "Category": {
-          "projections": [
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "buildings"
-                    }
-                  },
-                  "Property": "profit_per_level"
-                }
-              },
-              "queryRef": "buildings.dividends_per_level",
-              "nativeQueryRef": "profit_per_level",
-              "active": true
-            }
-          ]
-        },
-        "Series": {
           "projections": [
             {
               "field": {
@@ -45,7 +26,26 @@
                 }
               },
               "queryRef": "country_rankings.rank",
-              "nativeQueryRef": "rank"
+              "nativeQueryRef": "rank",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "buildings"
+                    }
+                  },
+                  "Property": "building_simplified"
+                }
+              },
+              "queryRef": "buildings.building_simplified",
+              "nativeQueryRef": "building_simplified"
             }
           ]
         },
@@ -102,7 +102,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "e0c15a9916b95ea45207",
+        "name": "03acd1335e756bd07207",
         "field": {
           "Column": {
             "Expression": {
@@ -110,13 +110,80 @@
                 "Entity": "buildings"
               }
             },
-            "Property": "profit_per_level"
+            "Property": "building_simplified"
           }
         },
-        "type": "Advanced"
+        "type": "Categorical",
+        "filter": {
+          "Version": 2,
+          "From": [
+            {
+              "Name": "b",
+              "Entity": "buildings",
+              "Type": 0
+            }
+          ],
+          "Where": [
+            {
+              "Condition": {
+                "In": {
+                  "Expressions": [
+                    {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Source": "b"
+                          }
+                        },
+                        "Property": "building_simplified"
+                      }
+                    }
+                  ],
+                  "Values": [
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'building_arms_industry'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'building_artillery_foundry'"
+                        }
+                      }
+                    ],
+                    [
+                      {
+                        "Literal": {
+                          "Value": "'building_munition_plant'"
+                        }
+                      }
+                    ]
+                  ]
+                }
+              }
+            }
+          ]
+        }
       },
       {
-        "name": "9b783e80b02561469658",
+        "name": "cc216fef2853b0067d0d",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "country_rankings"
+              }
+            },
+            "Property": "rank"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "34d4889817b9bc79c0e1",
         "field": {
           "Aggregation": {
             "Expression": {
@@ -133,20 +200,6 @@
           }
         },
         "type": "Advanced"
-      },
-      {
-        "name": "5c74ba9e8765b90cc223",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "country_rankings"
-              }
-            },
-            "Property": "rank"
-          }
-        },
-        "type": "Categorical"
       }
     ]
   }

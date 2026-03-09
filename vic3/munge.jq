@@ -26,6 +26,14 @@ def to_rows: to_entries | .[] | squish;
 		capital,
 		market,
 	}],
+	country_balances: [.ai.ai[].spending_variables | {
+		country,
+		authority: .authority_balance,
+		barracks: .barracks_levels,
+		bureaucracy: (.bureaucracy_income // 0) - (.bureaucracy_expenses // 0),
+		prestige,
+		innovation,
+	}],
 	interest_groups : [.interest_groups.database | to_rows | {
 		id,
 		definition,
@@ -56,8 +64,13 @@ def to_rows: to_entries | .[] | squish;
 		region,
 		arable_land,
 		incorporated: .incorporation | not | not,
-	}],
-	buildings : [.building_manager.database | to_rows | 
+	} + (.state_building_budget | {
+		government_revenue: .income,
+		government_expenses: .expense,
+		military_wages: add(.expenses.military_wages[].[]) // 0,
+		military_goods: add(.expenses.military_goods[].[]) // 0,
+	})],
+	buildings : [.building_manager.database | to_rows |
 		select(.levels > 0) | {
 			id,
 			building,
@@ -86,6 +99,13 @@ def to_rows: to_entries | .[] | squish;
 		.country as $country | .acquired_technologies[] | {
 			country: $country,
 			technology: .,
+	}],
+	units : [.new_combat_unit_manager.database | to_rows | {
+			country,
+			culture,
+			building,
+			manpower: .current_manpower // 0,
+			type,
 	}],
 	relations : [.relations.database | to_rows | 
 		select((.relations | values) and (.first | values) and (.second | values)) | {

@@ -45,17 +45,49 @@ table states
 
 		annotation SummarizationSetBy = Automatic
 
+	column government_revenue
+		dataType: string
+		lineageTag: 2fe45923-eaa4-4d8e-af90-dfe448eabc86
+		summarizeBy: none
+		sourceColumn: government_revenue
+
+		annotation SummarizationSetBy = Automatic
+
+	column government_expenses
+		dataType: string
+		lineageTag: 4c19dee2-d014-4c0f-9939-d655231dbcda
+		summarizeBy: none
+		sourceColumn: government_expenses
+
+		annotation SummarizationSetBy = Automatic
+
+	column military_wages
+		dataType: string
+		lineageTag: f45ef070-55f9-42c5-bc7f-7aedde85c3ec
+		summarizeBy: none
+		sourceColumn: military_wages
+
+		annotation SummarizationSetBy = Automatic
+
+	column military_goods
+		dataType: string
+		lineageTag: f44a55cc-29ca-4c59-987d-41acd22b0c7f
+		summarizeBy: none
+		sourceColumn: military_goods
+
+		annotation SummarizationSetBy = Automatic
+
 	partition states = m
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(File.Contents(Root & "\states.csv"),[Delimiter=",", Columns=5, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(File.Contents(Root & "\states.csv"),[Delimiter=",", Columns=9, Encoding=1252, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"id", Int64.Type}, {"country", Int64.Type}, {"region", type text}, {"arable_land", Int64.Type}, {"incorporated", type logical}})
 				in
 				    #"Changed Type"
 
-	annotation PBI_ResultType = Exception
+	annotation PBI_ResultType = Table
 
 	annotation PBI_NavigationStepName = Navigation
 
