@@ -159,6 +159,48 @@
           ]
         },
         "howCreated": "User"
+      },
+      {
+        "name": "8ebe45e1ac78e023a53a",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "interest_groups"
+              }
+            },
+            "Property": "definition"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "25b113c0830b06302e57",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "countries"
+              }
+            },
+            "Property": "definition"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c24cc32aa9848c13013c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "interest_groups"
+              }
+            },
+            "Property": "gdp_clout"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

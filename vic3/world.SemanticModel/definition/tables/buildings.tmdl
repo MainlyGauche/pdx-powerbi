@@ -98,20 +98,28 @@ table buildings
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column profit
-		dataType: string
+		dataType: double
 		lineageTag: deb74ce1-cea5-4f2a-9119-e6e9f5654993
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: profit
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	column wages
-		dataType: string
+		dataType: double
 		lineageTag: a8f240c2-911a-4791-843f-732d343e580b
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: wages
 
+		changedProperty = DataType
+
 		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition buildings = m
 		mode: import

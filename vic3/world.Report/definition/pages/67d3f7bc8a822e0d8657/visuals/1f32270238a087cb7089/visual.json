@@ -1,0 +1,153 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
+  "name": "1f32270238a087cb7089",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 0,
+    "height": 719.75683890577511,
+    "width": 1280
+  },
+  "visual": {
+    "visualType": "columnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "buildings"
+                    }
+                  },
+                  "Property": "building_simplified"
+                }
+              },
+              "queryRef": "buildings.building_simplified",
+              "nativeQueryRef": "building_simplified",
+              "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "country_rankings"
+                    }
+                  },
+                  "Property": "rank"
+                }
+              },
+              "queryRef": "country_rankings.rank",
+              "nativeQueryRef": "rank"
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "buildings"
+                        }
+                      },
+                      "Property": "levels"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(buildings.levels)",
+              "nativeQueryRef": "Sum of levels"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "buildings"
+                      }
+                    },
+                    "Property": "levels"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "f1d09f0308b86a063503",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "buildings"
+              }
+            },
+            "Property": "building_simplified"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "82a4dfae1042d0c67207",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "buildings"
+                  }
+                },
+                "Property": "levels"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "26fd266400a0e17704b6",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "country_rankings"
+              }
+            },
+            "Property": "rank"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
+  }
+}
